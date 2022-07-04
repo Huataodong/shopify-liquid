@@ -28,7 +28,7 @@ class CartDrawer extends HTMLElement {
     const cartDrawerNote = this.querySelector('[id^="Details-"] summary');
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
     // here the animation doesn't seem to always get triggered. A timeout seem to help
-    setTimeout(() => {this.classList.add('animate', 'active')});
+    setTimeout(() => { this.classList.add('animate', 'active') });
 
     this.addEventListener('transitionend', () => {
       const containerToTrapFocusOn = this.classList.contains('is-empty') ? this.querySelector('.drawer__inner-empty') : document.getElementById('CartDrawer');
@@ -49,7 +49,7 @@ class CartDrawer extends HTMLElement {
     cartDrawerNote.setAttribute('role', 'button');
     cartDrawerNote.setAttribute('aria-expanded', 'false');
 
-    if(cartDrawerNote.nextElementSibling.getAttribute('id')) {
+    if (cartDrawerNote.nextElementSibling.getAttribute('id')) {
       cartDrawerNote.setAttribute('aria-controls', cartDrawerNote.nextElementSibling.id);
     }
 
@@ -63,10 +63,10 @@ class CartDrawer extends HTMLElement {
   renderContents(parsedState) {
     this.querySelector('.drawer__inner').classList.contains('is-empty') && this.querySelector('.drawer__inner').classList.remove('is-empty');
     this.productId = parsedState.id;
-    this.getSectionsToRender().forEach((section => {
+    this.getToRender().forEach((section => {
       const sectionElement = section.selector ? document.querySelector(section.selector) : document.getElementById(section.id);
       sectionElement.innerHTML =
-          this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
+        this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
     }));
 
     setTimeout(() => {
