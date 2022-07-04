@@ -1,11 +1,5 @@
 {
   "sections": {
-    "16569108787c62a92d": {
-      "type": "liquid-objects",
-      "settings": {
-        "liq-obj": ""
-      }
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -42,6 +36,7 @@
       ],
       "settings": {
         "image": "{{ shop.brand.cover_image }}",
+        "image_2": "shopify:\/\/shop_images\/WechatIMG8.jpg",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "adapt_height_first_image": false,
@@ -82,6 +77,12 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
+      }
+    },
+    "16569108787c62a92d": {
+      "type": "liquid-objects",
+      "settings": {
+        "liq-obj": ""
       }
     },
     "featured_collection": {
@@ -217,9 +218,9 @@
     }
   },
   "order": [
-    "16569108787c62a92d",
     "image_banner",
     "rich_text",
+    "16569108787c62a92d",
     "featured_collection",
     "collage",
     "video",
